@@ -193,7 +193,7 @@ h3,h4,h5 {
 .qna-comment .article:first-child{border-top:1px solid #dfdfdf}
 .qna-comment .article.best-article{border-bottom-width:4px;}
 .qna-comment .article.best-article .btn-like-article{top:108px}
-.qna-comment-slipp,.qna-comment-fb{margin-top:2em;border-top:4px solid #efefef}
+.qna-comment-sisparang,.qna-comment-fb{margin-top:2em;border-top:4px solid #efefef}
 .qna-comment-count{margin:0;padding:1em 0 0;font-weight:bold;font-size:1.2em}
 
 .qna-write {
