@@ -1,31 +1,39 @@
 package http;
 
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class RequestLine {
 	private static final Logger log = LoggerFactory.getLogger(RequestLine.class);
 
-	private String method;
+	private HttpMethod method;
 
 	private String path;
 
-	private Map<String, String> params;
+	private String queryString;
 
-	RequestLine(String requestLine) {
+	public RequestLine(String requestLine) {
+		log.debug("request line : {}", requestLine);
+		String[] tokens = requestLine.split(" ");
+		this.method = HttpMethod.valueOf(tokens[0]);
+
+		String[] url = tokens[1].split("\\?");
+		this.path = url[0];
+
+		if (url.length == 2) {
+			this.queryString = url[1];
+		}
 	}
 
-	String getMethod() {
+	public HttpMethod getMethod() {
 		return method;
 	}
 
-	String getPath() {
+	public String getPath() {
 		return path;
 	}
 
-	Map<String, String> getParams() {
-		return params;
+	public String getQueryString() {
+		return queryString;
 	}
 }
