@@ -13,7 +13,7 @@ public class RequestParams {
 
 	private Map<String, String> params = new HashMap<>();
 
-	void addQueryString(String queryString) {
+	public void addQueryString(String queryString) {
 		putParams(queryString);
 	}
 
@@ -28,11 +28,11 @@ public class RequestParams {
 		log.debug("params : {}", params);
 	}
 
-	void addBody(String body) {
+	public void addBody(String body) {
 		putParams(body);
 	}
 
-	String getParameter(String name) {
+	public String getParameter(String name) {
 		return params.get(name);
 	}
 }
