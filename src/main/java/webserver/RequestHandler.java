@@ -14,7 +14,7 @@ import http.HttpRequest;
 import http.HttpResponse;
 import http.HttpSessions;
 
-public class RequestHandler extends Thread {
+public class RequestHandler implements Runnable {
 	private static final Logger log = LoggerFactory.getLogger(RequestHandler.class);
 
 	private Socket connection;
